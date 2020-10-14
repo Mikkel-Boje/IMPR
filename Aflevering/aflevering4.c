@@ -8,22 +8,23 @@ double findRoot2(double a, double b, double discriminant);
 
 int main(void) 
 {
- double a, b, c;
+double a, b, c;
 
- do
- {
-  printf("Enter coeficients a, b, and c: ");
-  scanf("%lf %lf %lf", &a, &b, &c);
-  if(a == 0 && b == 0 && c == 0)
-  {
-      break;
-  }
-  else
-  {
-      solveQuadraticEquation(a, b, c);  
-  }
- } while(a != 0 && b != 0 && c != 0);
- 
+int looping = 1;
+
+while(looping)
+{
+    printf("Enter coeficients a, b, and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    looping = !(a == 0 && b == 0 && c == 0);
+
+    if (looping) 
+    {
+        solveQuadraticEquation(a, b, c); 
+    }
+}
+
   return 0;
 } 
 
